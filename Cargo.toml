@@ -5,9 +5,18 @@ edition = "2024"
 
 [dependencies]
 actix-web = "4.11.0"
+redis = "0.32.6"
 serde = "1.0.228"
 serde_json = "1.0.145"
 
 [[bin]]
 name = "todos"
 path = "api/todos.rs"
+
+[[bin]]
+name = "add"
+path = "api/add.rs"
+
+[[bin]]
+name = "delete"
+path = "api/delete.rs"
