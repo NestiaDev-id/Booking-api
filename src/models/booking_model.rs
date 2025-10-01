@@ -22,6 +22,16 @@ pub struct BookingRequest {
     pub duration_minutes: u8,
 }
 
+pub struct FullBooking {
+    pub _id: ObjectId,
+    pub owner: Owner,
+    pub dogs: Vec<Dog>,
+    pub start_time: DateTime,
+    pub duration_in_minutes: u8,
+    pub cancelled: bool,
+}
+
+
 impl TryFrom<BookingRequest> for Booking {
     type Error = Box<dyn std::error::Error>;
 
