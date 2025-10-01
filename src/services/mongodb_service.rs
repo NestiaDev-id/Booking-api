@@ -22,9 +22,9 @@ impl Database {
         let owner: mongodb::Collection<crate::models::owner_model::Owner> = db.collection("owners");
 
         Database {
-            booking,
-            dog,
-            owner,
+            bookings: booking,
+            dogs: dog,
+            owners: owner,
         }
     }
 }
