@@ -42,7 +42,7 @@ impl Database {
     pub async fn create_owner(&self, owner: Owner) -> Result<InsertOneResult, Error> {
         let result = self
             .owner
-            .insert_one(owner, None)
+            .insert_one(owner)
             .await
             .ok()
             .expect("Error creating owner");
@@ -53,7 +53,7 @@ impl Database {
     pub async fn create_dog(&self, dog: Dog) -> Result<InsertOneResult, Error> {
         let result = self
             .dog
-            .insert_one(dog, None)
+            .insert_one(dog)
             .await
             .ok()
             .expect("Error creating dog");
@@ -64,7 +64,7 @@ impl Database {
     pub async fn create_booking(&self, booking: Booking) -> Result<InsertOneResult, Error> {
         let result = self
             .booking
-            .insert_one(booking, None)
+            .insert_one(booking)
             .await
             .ok()
             .expect("Error creating booking");
@@ -109,7 +109,6 @@ impl Database {
                         }
                     },
                 ],
-                None,
             )
             .await
             .ok()
@@ -143,7 +142,6 @@ impl Database {
                         "cancelled": true
                     }
                 },
-                None,
             )
             .await
             .ok()
