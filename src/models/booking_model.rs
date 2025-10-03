@@ -3,6 +3,8 @@ use std::time::SystemTime;
 use chrono::Utc;
 use mongodb::bson::{oid::ObjectId, DateTime};
 
+use crate::models::{dog_model::Dog, owner_model::Owner};
+
 #[derive(Debug, serde::Serialize, serde::Deserialize)]
 
 pub struct Booking {
