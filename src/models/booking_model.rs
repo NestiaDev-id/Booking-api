@@ -24,6 +24,8 @@ pub struct BookingRequest {
     pub duration_minutes: u8,
 }
 
+#[derive(Debug, serde::Serialize, serde::Deserialize)]
+
 pub struct FullBooking {
     pub _id: ObjectId,
     pub owner: Owner,
